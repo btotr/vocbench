@@ -5,3 +5,5 @@
 *.retry
 .pip
 graphdb-free*
+provisioning/keys/*
+.bash_history

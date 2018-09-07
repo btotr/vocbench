@@ -1,13 +1,15 @@
 [vocbench]
-10.0.0.11
+18.188.67.192
+
 
 [graphdb]
-10.0.0.13
+18.188.67.192
 
-[vagrant:children]
+[aws:children]
 vocbench
 graphdb
 
-[vagrant:vars]
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
+[aws:vars]
+ansible_ssh_user=ubuntu
+ansible_ssh_pass=ubuntu
+ansible_ssh_private_key_file=./keys/btotr.pem
