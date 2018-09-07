@@ -1,0 +1,42 @@
+---
+
+- name: add java repo
+  apt_repository:
+    repo: "ppa:openjdk-r/ppa"
+
+- name: Install java
+  apt:
+    name: openjdk-8-jre
+    update_cache: yes
+
+- name: Install unzip
+  apt:
+    name: unzip
+
+- name: Download Vocbench
+  unarchive:
+    src: "https://bitbucket.org/art-uniroma2/vocbench3/downloads/vocbench3-{{vocbench_version}}_full.zip"
+    dest: /usr/local/
+    remote_src: yes
+
+- name: Add vocbench group
+  group:
+    name: vocbench
+    system: yes
+
+- name: Add vocbench user
+  user:
+    name: vocbench
+    group: vocbench
+    system: yes
+
+- name: Add execution rights
+  file:
+    path: /usr/local/semanticturkey-{{vocbench_version}}/bin/karaf
+    mode: 0750
+
+- name: run vocbench
+  service:
+    name: karaf
+    pattern: /usr/local/semanticturkey-{{vocbench_version}}/bin/karaf
+    state: started

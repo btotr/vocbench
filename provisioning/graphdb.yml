@@ -1,0 +1,6 @@
+---
+- hosts: graphdb
+  become: yes
+  user: root
+  roles:
+    - graphdb

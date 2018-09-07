@@ -1,0 +1,13 @@
+[vocbench]
+10.0.0.11
+
+[graphdb]
+10.0.0.13
+
+[vagrant:children]
+vocbench
+graphdb
+
+[vagrant:vars]
+ansible_ssh_user=vagrant
+ansible_ssh_pass=vagrant

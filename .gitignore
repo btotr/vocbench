@@ -1,0 +1,6 @@
+.vagrant
+.ansible
+.cache
+.ssh
+*.retry
+graphdb-free*

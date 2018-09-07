@@ -1,0 +1,6 @@
+---
+- hosts: vocbench
+  become: yes
+  user: root
+  roles:
+    - vocbench

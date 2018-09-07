@@ -1,0 +1,9 @@
+[Unit]
+Description=vocbench
+After=network.target
+
+[Service]
+ExecStart=/usr/local/semanticturkey-{{vocbench_version}}/bin/karaf
+
+[Install]
+WantedBy=multi-user.target

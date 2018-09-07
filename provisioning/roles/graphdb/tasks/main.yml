@@ -1,0 +1,19 @@
+---
+
+- name: Copy over graphdb
+  copy:
+    src: graphdb-free-8.6.1-dist.zip
+    dest: /tmp/graphdb-free-8.6.1-dist.zip
+    force: no
+
+- name: Download Vocbench
+  unarchive:
+    src: /tmp/graphdb-free-8.6.1-dist.zip
+    dest: /usr/local/
+    remote_src: yes
+
+- name: Start graphdb
+  service:
+    name: graphdb
+    pattern: /usr/local/graphdb-free-8.6.1/bin/graphdb
+    state: started

@@ -1,0 +1,9 @@
+[Unit]
+Description=graphdb
+After=network.target
+
+[Service]
+ExecStart=/usr/local/graphdb-free-8.6.1/bin/graphdb
+
+[Install]
+WantedBy=multi-user.target
