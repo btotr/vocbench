@@ -3,4 +3,5 @@
 .cache
 .ssh
 *.retry
+.pip
 graphdb-free*
